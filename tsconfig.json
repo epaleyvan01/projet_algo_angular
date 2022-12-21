@@ -23,7 +23,6 @@
       "dom"
     ],
     "types": [
-      "@angular/localize"
     ]
   },
   "angularCompilerOptions": {
