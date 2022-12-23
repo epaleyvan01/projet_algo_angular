@@ -1,0 +1,363 @@
+[
+    {
+        "name": "Mango Plenty J",
+        "sms": 25,
+        "calls": 0,
+        "data": 0,
+        "validity": 1,
+        "price": 100
+    },
+    {
+        "name": "Mango Plenty S",
+        "sms": 1000,
+        "calls": 1460,
+        "data": 0,
+        "validity": 7,
+        "price": 250
+    },
+    {
+        "name": "Mango Plenty M",
+        "sms": 10000,
+        "calls": 1950,
+        "data": 0,
+        "validity": 30,
+        "price": 450
+    },
+    {
+        "name": "Mango Giga 3J 1200",
+        "sms": 0,
+        "calls": 0,
+        "data": 3072,
+        "validity": 3,
+        "price": 1200
+    },
+    {
+        "name": "Mango Giga 3J 5400",
+        "sms": 0,
+        "calls": 0,
+        "data": 4096,
+        "validity": 3,
+        "price": 5400
+    },
+    {
+        "name": "Mango Giga 7J 2650",
+        "sms": 0,
+        "calls": 0,
+        "data": 7168,
+        "validity": 7,
+        "price": 2650
+    },
+    {
+        "name": "Mango Giga 7J 5400",
+        "sms": 0,
+        "calls": 0,
+        "data": 14336,
+        "validity": 7,
+        "price": 5600
+    },
+    {
+        "name": "Mango Giga 7J 15400",
+        "sms": 0,
+        "calls": 0,
+        "data": 35840,
+        "validity": 7,
+        "price": 15400
+    },
+    {
+        "name": "Mango Giga 30J 10000",
+        "sms": 0,
+        "calls": 0,
+        "data": 30720,
+        "validity": 7,
+        "price": 10000
+    },
+    {
+        "name": "Mango Giga 30J 21500",
+        "sms": 0,
+        "calls": 0,
+        "data": 61440,
+        "validity": 7,
+        "price": 21500
+    },
+    {
+        "name": "Mango Flex 300-1",
+        "sms": 100,
+        "calls": 1300,
+        "data": 30,
+        "validity": 7,
+        "price": 300
+    },
+    {
+        "name": "Mango Flex 300-2",
+        "sms": 100,
+        "calls": 1500,
+        "data": 0,
+        "validity": 7,
+        "price": 300
+    },
+    {
+        "name": "Mango Flex 300-3",
+        "sms": 100,
+        "calls": 1400,
+        "data": 25,
+        "validity": 7,
+        "price": 300
+    },
+    {
+        "name": "Mango Flex 300-4",
+        "sms": 100,
+        "calls": 1200,
+        "data": 0,
+        "validity": 7,
+        "price": 300
+    },
+    {
+        "name": "Mango PS combo",
+        "sms": 10000,
+        "calls": 15000,
+        "data": 6144,
+        "validity": 30,
+        "price": 5000
+    },
+    {
+        "name": "Mango PS 2100",
+        "sms": 0,
+        "calls": 0,
+        "data": 4608,
+        "validity": 30,
+        "price": 2100
+    },
+    {
+        "name": "Mango PS talk",
+        "sms": 0,
+        "calls": 10000,
+        "data": 0,
+        "validity": 30,
+        "price": 1000
+    },
+    {
+        "name": "Mango PS 1200",
+        "sms": 0,
+        "calls": 0,
+        "data": 2252.8,
+        "validity": 30,
+        "price": 1200
+    },
+    {
+        "name": "Mango PS 500",
+        "sms": 0,
+        "calls": 0,
+        "data": 900,
+        "validity": 30,
+        "price": 500
+    },
+    {
+        "name": "Mango PS 400",
+        "sms": 10000,
+        "calls": 0,
+        "data": 0,
+        "validity": 30,
+        "price": 1200
+    },
+    {
+        "name": "Mango PS 50",
+        "sms": 0,
+        "calls": 0,
+        "data": 50,
+        "validity": 1,
+        "price": 5000
+    },
+
+    {
+        "name": "Hemle Jour 99",
+        "sms": 0,
+        "calls": 750,
+        "data": 0,
+        "validity": 1,
+        "price": 99
+    },
+    {
+        "name": "Hemle Jour 149",
+        "sms": 0,
+        "calls": 1460,
+        "data": 0,
+        "validity": 1,
+        "price": 149
+    },
+    {
+        "name": "Hemle Jour 199",
+        "sms": 0,
+        "calls": 1950,
+        "data": 0,
+        "validity": 1,
+        "price": 199
+    },
+    {
+        "name": "Hemle Jour 249",
+        "sms": 50,
+        "calls": 3500,
+        "data": 0,
+        "validity": 1,
+        "price": 99
+    },
+    {
+        "name": "Hemle Semaine 499",
+        "sms": 0,
+        "calls": 3800,
+        "data": 0,
+        "validity": 7,
+        "price": 499
+    },
+    {
+        "name": "Hemle Semaine 999",
+        "sms": 0,
+        "calls": 7950,
+        "data": 0,
+        "validity": 7,
+        "price": 999
+    },
+    {
+        "name": "Hemle Semaine 1500",
+        "sms": 50,
+        "calls": 12200,
+        "data": 0,
+        "validity": 7,
+        "price": 1500
+    },
+    {
+        "name": "Hemle Mois 2999",
+        "sms": 0,
+        "calls": 23390,
+        "data": 0,
+        "validity": 30,
+        "price": 2999
+    },
+    {
+        "name": "Hemle Net 3J",
+        "sms": 0,
+        "calls": 0,
+        "data": 160,
+        "validity": 3,
+        "price": 160
+    },
+    {
+        "name": "Hemle Net 599",
+        "sms": 0,
+        "calls": 0,
+        "data": 660,
+        "validity": 30,
+        "price": 599
+    },
+    {
+        "name": "Hemle Net 849",
+        "sms": 0,
+        "calls": 0,
+        "data": 1024,
+        "validity": 30,
+        "price": 1500
+    },
+    {
+        "name": "Hemle Net 949",
+        "sms": 0,
+        "calls": 0,
+        "data": 1812.42,
+        "validity": 30,
+        "price": 949
+    },
+    {
+        "name": "Hemle calls 100",
+        "sms": 20,
+        "calls": 300,
+        "data": 0,
+        "validity": 1,
+        "price": 100
+    },
+    {
+        "name": "Hemle calls J 250",
+        "sms": 20,
+        "calls": 750,
+        "data": 0,
+        "validity": 1,
+        "price": 250
+    },
+    {
+        "name": "Hemle calls S 300",
+        "sms": 30,
+        "calls": 900,
+        "data": 0,
+        "validity": 7,
+        "price": 300
+    },
+    {
+        "name": "Hemle calls M 600",
+        "sms": 50,
+        "calls": 1800,
+        "data": 0,
+        "validity": 30,
+        "price": 600
+    },
+    {
+        "name": "Hemle calls M 26k",
+        "sms": 500,
+        "calls": 96000,
+        "data": 0,
+        "validity": 30,
+        "price": 26000
+    },
+    {
+        "name": "Hemle Illimité J",
+        "sms": 150,
+        "calls": 0,
+        "data": 0,
+        "validity": 1,
+        "price": 20
+    },
+    {
+        "name": "Hemle Illimité M",
+        "sms": 9000,
+        "calls": 0,
+        "data": 0,
+        "validity": 30,
+        "price": 500
+    },
+    {
+        "name": "Hemle Comp S 1000",
+        "sms": 100,
+        "calls": 3000,
+        "data": 75,
+        "validity": 7,
+        "price": 1000
+    },
+    {
+        "name": "Hemle Comp S 2500",
+        "sms": 100,
+        "calls": 8500,
+        "data": 250,
+        "validity": 7,
+        "price": 1500
+    },
+    {
+        "name": "Hemle Comp M 3000",
+        "sms": 250,
+        "calls": 9000,
+        "data": 250,
+        "validity": 30,
+        "price": 3000
+    },
+    {
+        "name": "Hemle Comp M 5000",
+        "sms": 500,
+        "calls": 17000,
+        "data": 500,
+        "validity": 30,
+        "price": 5000
+    },
+    {
+        "name": "Hemle Comp M 10000",
+        "sms": 500,
+        "calls": 35000,
+        "data": 1024,
+        "validity": 30,
+        "price": 10000
+    }
+]
