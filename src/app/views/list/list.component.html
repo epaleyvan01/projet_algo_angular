@@ -1,0 +1,27 @@
+<main>
+    <div>
+        <h3>List of package</h3>
+        <div class="input-group rounded">
+            <input type="search" class="form-control " placeholder="Search..." aria-label="Search" aria-describedby="search-addon" (keyup)="handleChange($event)" />
+            <span class="input-group-text bg-primary text-white border-0" id="search-addon">
+              <i class="bi bi-search"></i>
+            </span>
+        </div>
+        <span *ngIf="isNotDone; else list">
+            <h3 class="text-center my-5"><i class="bi bi-search m-2 loup-animation"></i> Loading...</h3>
+        </span>
+        <ng-template #list>
+            <div class="row mt-5">
+                <div class="col-6 my-2" *ngFor="let deal of displayedPack">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">{{deal.name}}</h4>
+                            <p class="card-text text-danger">{{deal.price}} Fcfa</p>
+                            <button class="btn btn-outline-primary">Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</main>

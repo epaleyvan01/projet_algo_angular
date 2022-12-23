@@ -1,0 +1,113 @@
+<main class="row justify-content-center">
+    <form class="form" [formGroup]="formdata">
+        <div class="progression">
+            <div class="progress my-3">
+                <div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{progression}}%"></div>
+            </div>
+        </div>
+        <span *ngIf="step == 1; then step1"></span>
+        <span *ngIf="step == 2; then step2"></span>
+        <span *ngIf="step == 3; then step3"></span>
+        <span *ngIf="step == 4; then step4"></span>
+        <ng-template #step1>
+            <div class="form-content">
+                <div class="form-header my-4">
+                    <h6 class="text-center">Step 1</h6>
+                    <button class="btn btn-outline-secondary" routerLink="/"><i class="bi bi-arrow-left"></i>Home</button>
+                </div>
+                <div class="form-main my-4">
+                    <h4>Make a priority</h4>
+                    <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero dolor autem suscipit qui quam quos dolorem, cupiditate error maiores culpa dolores sed? Totam quisquam nisi et ratione unde atque repudiandae!</small>
+                    <div class="row my-2">
+                        <div class="col-4 mb-3">
+                            <label for="" class="form-label">SMS</label>
+                            <select class="form-select form-select-lg {{msgError.sms_color}}" name="sms" id="sms" formControlName="sms">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                            <small class="text-danger">{{msgError.sms}}</small>
+                        </div>
+                        <div class="col-4 mb-3">
+                            <label for="" class="form-label">Call</label>
+                            <select class="form-select form-select-lg {{msgError.call_color}}" name="call" id="call" formControlName="call">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                            <small class="text-danger">{{msgError.call}}</small>
+                        </div>
+                        <div class="col-4 mb-3">
+                            <label for="" class="form-label">Data</label>
+                            <select class="form-select form-select-lg {{msgError.data_color}}" name="data" id="data" formControlName="data">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                            <small class="text-danger">{{msgError.data}}</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-footer my-4">
+                    <button (click)="onNextStep(2, formdata.value)" class="btn btn-lg btn-success">Continue</button>
+                </div>
+            </div>
+        </ng-template>
+
+        <ng-template #step2>
+            <div class="form-content">
+                <div class="form-header my-4">
+                    <h6 class="text-center">Step 2</h6>
+                    <button class="btn btn-outline-secondary" (click)="onPreviousStep(1)"><i class="bi bi-arrow-left"></i>Back</button>
+                </div>
+                <div class="form-main my-4">
+                    <h4>Select a validity</h4>
+                    <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero dolor autem suscipit qui quam quos dolorem, cupiditate error maiores culpa dolores sed? Totam quisquam nisi et ratione unde atque repudiandae!</small>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Validity</label>
+                        <select class="form-select form-select-lg {{msgError.validity_color}}" name="validity" id="validity" formControlName="validity">
+                            <option value="1">Day</option>
+                            <option value="3">3 Days</option>
+                            <option value="7">Week</option>
+                            <option value="30">Month</option>
+                        </select>
+                        <small class="text-danger">{{msgError.validity}}</small>
+                    </div>
+                </div>
+                <div class="form-footer my-4">
+                    <button (click)="onNextStep(3, formdata.value)" class="btn btn-lg btn-success">Continue</button>
+                </div>
+            </div>
+        </ng-template>
+
+        <ng-template #step3>
+            <div class="form-content">
+                <div class="form-header my-4">
+                    <h6 class="text-center">Step 3</h6>
+                    <button class="btn btn-outline-secondary" (click)="onPreviousStep(2)"><i class="bi bi-arrow-left"></i>Back</button>
+                </div>
+                <div class="form-main my-4">
+                    <h4>Enter an amount</h4>
+                    <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero dolor autem suscipit qui quam quos dolorem, cupiditate error maiores culpa dolores sed? Totam quisquam nisi et ratione unde atque repudiandae!</small>
+                    <div class="mb-3">
+                      <label for="" class="form-label">Amount (in F cfa)</label>
+                      <input type="number" class="form-control {{msgError.price_color}}" name="" id="" aria-describedby="helpId" placeholder="Ex: 100" formControlName="price">
+                      <small id="helpId" class="text-danger">{{msgError.price}}</small>
+                    </div>
+                </div>
+                <div class="form-footer my-4">
+                    <button (click)="onNextStep(4, formdata.value)" class="btn btn-lg btn-success">Continue</button>
+                </div>
+            </div>
+        </ng-template>
+
+        <ng-template #step4>
+            <div>
+                <p>Loading...</p>
+            </div>
+        </ng-template>
+    </form>
+</main>
