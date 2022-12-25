@@ -2,7 +2,7 @@
     <form class="form" [formGroup]="formdata">
         <div class="progression">
             <div class="progress my-3">
-                <div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{progression}}%"></div>
+                <div id="progress-bar" class="progress-bar {{finalCSS}}" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{progression}}%"></div>
             </div>
         </div>
         <span *ngIf="step == 1; then step1"></span>
@@ -13,13 +13,13 @@
             <div class="form-content">
                 <div class="form-header my-4">
                     <h6 class="text-center">Step 1</h6>
-                    <button class="btn btn-outline-secondary" routerLink="/"><i class="bi bi-arrow-left"></i>Home</button>
+                    <button class="btn btn-outline-secondary" routerLink="/" type="button"><i class="bi bi-arrow-left"></i>Home</button>
                 </div>
                 <div class="form-main my-4">
                     <h4>Make a priority</h4>
                     <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero dolor autem suscipit qui quam quos dolorem, cupiditate error maiores culpa dolores sed? Totam quisquam nisi et ratione unde atque repudiandae!</small>
                     <div class="row my-2">
-                        <div class="col-4 mb-3">
+                        <div class="col-sm-4 mb-3">
                             <label for="" class="form-label">SMS</label>
                             <select class="form-select form-select-lg {{msgError.sms_color}}" name="sms" id="sms" formControlName="sms">
                                 <option value="0">0</option>
@@ -29,7 +29,7 @@
                             </select>
                             <small class="text-danger">{{msgError.sms}}</small>
                         </div>
-                        <div class="col-4 mb-3">
+                        <div class="col-sm-4 mb-3">
                             <label for="" class="form-label">Call</label>
                             <select class="form-select form-select-lg {{msgError.call_color}}" name="call" id="call" formControlName="call">
                                 <option value="0">0</option>
@@ -39,7 +39,7 @@
                             </select>
                             <small class="text-danger">{{msgError.call}}</small>
                         </div>
-                        <div class="col-4 mb-3">
+                        <div class="col-sm-4 mb-3">
                             <label for="" class="form-label">Data</label>
                             <select class="form-select form-select-lg {{msgError.data_color}}" name="data" id="data" formControlName="data">
                                 <option value="0">0</option>
@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="form-footer my-4">
-                    <button (click)="onNextStep(2, formdata.value)" class="btn btn-lg btn-success">Continue</button>
+                    <button (click)="onNextStep(2, formdata.value)" class="btn btn-lg btn-success" type="submit">Continue</button>
                 </div>
             </div>
         </ng-template>
@@ -61,7 +61,7 @@
             <div class="form-content">
                 <div class="form-header my-4">
                     <h6 class="text-center">Step 2</h6>
-                    <button class="btn btn-outline-secondary" (click)="onPreviousStep(1)"><i class="bi bi-arrow-left"></i>Back</button>
+                    <button class="btn btn-outline-secondary" (click)="onPreviousStep(1)" type="button"><i class="bi bi-arrow-left"></i>Back</button>
                 </div>
                 <div class="form-main my-4">
                     <h4>Select a validity</h4>
@@ -78,7 +78,7 @@
                     </div>
                 </div>
                 <div class="form-footer my-4">
-                    <button (click)="onNextStep(3, formdata.value)" class="btn btn-lg btn-success">Continue</button>
+                    <button (click)="onNextStep(3, formdata.value)" class="btn btn-lg btn-success" type="submit">Continue</button>
                 </div>
             </div>
         </ng-template>
@@ -87,7 +87,7 @@
             <div class="form-content">
                 <div class="form-header my-4">
                     <h6 class="text-center">Step 3</h6>
-                    <button class="btn btn-outline-secondary" (click)="onPreviousStep(2)"><i class="bi bi-arrow-left"></i>Back</button>
+                    <button class="btn btn-outline-secondary" (click)="onPreviousStep(2)" type="button"><i class="bi bi-arrow-left"></i>Back</button>
                 </div>
                 <div class="form-main my-4">
                     <h4>Enter an amount</h4>
@@ -99,15 +99,39 @@
                     </div>
                 </div>
                 <div class="form-footer my-4">
-                    <button (click)="onNextStep(4, formdata.value)" class="btn btn-lg btn-success">Continue</button>
+                    <button (click)="onNextStep(4, formdata.value)" class="btn btn-lg btn-success" type="submit">Continue</button>
                 </div>
             </div>
         </ng-template>
 
         <ng-template #step4>
-            <div>
-                <p>Loading...</p>
+            <div class="my-4">
+                <h6 class="text-center">Final</h6>
+                <button class="btn btn-outline-secondary" (click)="onPreviousStep(1)" type="button"><i class="bi bi-arrow-left"></i>Restart</button>
             </div>
+            <div *ngIf="isNotDone; else res"><h4 class="text-center">Loading...</h4></div>
+            <ng-template #res>
+                <div *ngIf="result.length == 0; else list"><h4 class="text-center">Sorry, we can't find something to satisfy you. 😥<br> Verify your priority or validity</h4></div>
+                <ng-template #list>
+                    <div class="row mt-5">
+                        <div class="col-md-4 col-sm-6 my-2" *ngFor="let deal of result">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">{{deal.name}}</h4>
+                                    <p class="card-text">Call : {{deal.calls}} </p>
+                                    <div *ngIf="deal.data < 1024; else giga"><p class="card-text mb-3">Data : {{deal.data}} Mo</p></div>
+                                    <ng-template #giga>
+                                        <p class="card-text mb-3">Data : {{deal.data / 1024}} Go</p>
+                                    </ng-template>
+                                    <p class="card-text">SMS : {{deal.sms}}</p>
+                                    <p class="card-text">Validity : {{deal.validity}} day(s)</p>
+                                    <button class="btn btn-primary">{{deal.price}} Fcfa</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </ng-template>
         </ng-template>
     </form>
 </main>

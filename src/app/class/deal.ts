@@ -5,5 +5,13 @@ export class Deal{
     data!:number // In Mo
     validity!:number //Number of days
     price!:number
-    constructor(){}
+    
+    constructor(){
+        this.name = "";
+        this.sms = 0;
+        this.calls = 0;
+        this.data = 0;
+        this.validity = 0;
+        this.price = 0;
+    }
 }
