@@ -12,12 +12,18 @@
         </span>
         <ng-template #list>
             <div class="row mt-5">
-                <div class="col-6 my-2" *ngFor="let deal of displayedPack">
+                <div class="col-md-4 col-sm-6 my-2" *ngFor="let deal of displayedPack">
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">{{deal.name}}</h4>
-                            <p class="card-text text-danger">{{deal.price}} Fcfa</p>
-                            <button class="btn btn-outline-primary">Details</button>
+                            <p class="card-text">Call : {{deal.calls}} </p>
+                            <div *ngIf="deal.data < 1024; else giga"><p class="card-text mb-3">Data : {{deal.data}} Mo</p></div>
+                            <ng-template #giga>
+                                <p class="card-text mb-3">Data : {{deal.data / 1024}} Go</p>
+                            </ng-template>
+                            <p class="card-text">SMS : {{deal.sms}}</p>
+                            <p class="card-text">Validity : {{deal.validity}} day(s)</p>
+                            <button class="btn btn-primary">{{deal.price}} Fcfa</button>
                         </div>
                     </div>
                 </div>

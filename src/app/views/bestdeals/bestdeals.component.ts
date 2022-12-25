@@ -18,6 +18,9 @@ export class BestdealsComponent implements OnInit {
   dealForm:DealForm = new DealForm()
   msgError:MsgError = new MsgError()
   list!:Deal[];
+  result:Deal[] = [];
+  isNotDone:boolean = true;
+  finalCSS!:string
 
   constructor(private dealServ:DealService) { }
 
@@ -33,6 +36,7 @@ export class BestdealsComponent implements OnInit {
     await this.dealServ.getAll().subscribe((data) => {
       this.listPackageSort(data)
     })
+    this.finalCSS = "progress-bar-striped progress-bar-animated";
   }
 
   listPackageSort(rep:any){
@@ -52,30 +56,33 @@ export class BestdealsComponent implements OnInit {
       let rep = await this.validatePriority(data);
       if(rep){
         this.step = val;
-        console.log(this.dealForm.priority)
         this.progression+=33.4;
       }
     }else if(val == 3){
       let rep = await this.validateValidity(data);
       if(rep){
         this.step = val;
-        console.log("Validity : ", this.dealForm.validity)
         this.progression+=33.4;
       }
     }else if(val == 4){
       let rep = await this.validatePrice(data);
       if(rep){
         this.step = val;
-        console.log("Price : ", this.dealForm.price)
-        this.dealServ.choiceBestPlan(this.dealForm ,this.list);
         this.progression+=33.4;
+        this.showBestDeal();
       }
     }
   }
 
   onPreviousStep(val:number){
-    this.step = val;
-    this.progression-=33.4;
+    if(val == 1 && this.progression >= 100){
+      this.step = 1;
+      this.progression = 0;
+      this.finalCSS = "progress-bar-striped progress-bar-animated"
+    }else{
+      this.step = val;
+      this.progression-=33.4;
+    }
   }
 
   validatePriority(data:any){
@@ -142,5 +149,11 @@ export class BestdealsComponent implements OnInit {
       this.dealForm.price = parseInt(data.price);
     }
     return isDone;
+  }
+
+  async showBestDeal(){
+    this.result = await this.dealServ.choiceBestPlan(this.dealForm ,this.list);
+    this.isNotDone = false;
+    this.finalCSS = "bg-success"
   }
 }
