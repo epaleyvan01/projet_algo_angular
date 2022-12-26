@@ -17,7 +17,7 @@
                 </div>
                 <div class="form-main my-4">
                     <h4>Make a priority</h4>
-                    <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero dolor autem suscipit qui quam quos dolorem, cupiditate error maiores culpa dolores sed? Totam quisquam nisi et ratione unde atque repudiandae!</small>
+                    <small>the priorities vary between 0 and 3. 3 for largest and 0 for smallest. Select a priority for SMS, call, and data. If you don't have a priority, just put 0 in all the form.</small>
                     <div class="row my-2">
                         <div class="col-sm-4 mb-3">
                             <label for="" class="form-label">SMS</label>
@@ -65,7 +65,7 @@
                 </div>
                 <div class="form-main my-4">
                     <h4>Select a validity</h4>
-                    <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero dolor autem suscipit qui quam quos dolorem, cupiditate error maiores culpa dolores sed? Totam quisquam nisi et ratione unde atque repudiandae!</small>
+                    <small>Choice a validity for your package. Between 1 and 30 days</small>
                     <div class="mb-3">
                         <label for="" class="form-label">Validity</label>
                         <select class="form-select form-select-lg {{msgError.validity_color}}" name="validity" id="validity" formControlName="validity">
@@ -91,7 +91,7 @@
                 </div>
                 <div class="form-main my-4">
                     <h4>Enter an amount</h4>
-                    <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero dolor autem suscipit qui quam quos dolorem, cupiditate error maiores culpa dolores sed? Totam quisquam nisi et ratione unde atque repudiandae!</small>
+                    <small>How much can you spend?</small>
                     <div class="mb-3">
                       <label for="" class="form-label">Amount (in F cfa)</label>
                       <input type="number" class="form-control {{msgError.price_color}}" name="" id="" aria-describedby="helpId" placeholder="Ex: 100" formControlName="price">
@@ -113,7 +113,8 @@
             <ng-template #res>
                 <div *ngIf="result.length == 0; else list"><h4 class="text-center">Sorry, we can't find something to satisfy you. 😥<br> Verify your priority or validity</h4></div>
                 <ng-template #list>
-                    <div class="row mt-5">
+                    <h4 class="my-2 text-center">We found a package 🤩. Subscribe to all of this.</h4>
+                    <div class="row mt-5 justify-content-center">
                         <div class="col-md-4 col-sm-6 my-2" *ngFor="let deal of result">
                             <div class="card">
                                 <div class="card-body">
